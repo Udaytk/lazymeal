@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lazy Meal Decider</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🍳 Lazy Meal Decider</h1>
+    <p class="subtitle">Zero thinking required</p>
+    
+    <div class="input-section">
+      <input 
+        type="text" 
+        id="ingredients" 
+        placeholder="I have eggs, bread, ketchup..."
+        autocomplete="off"
+      >
+      <button id="findRecipes">Find Recipes</button>
+    </div>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Finding lazy recipes...</p>
+    </div>
+
+    <div id="recipes" class="recipes"></div>
+    
+    <div id="cookingMode" class="cooking-mode hidden">
+      <div class="cooking-header">
+        <h2 id="cookingTitle"></h2>
+        <button id="closeCooking" class="close-btn">✕</button>
+      </div>
+      
+      <div class="step-container">
+        <div class="step-number">Step <span id="currentStep">1</span> of <span id="totalSteps">5</span></div>
+        <div id="stepText" class="step-text"></div>
+        <div id="voiceGuidance" class="voice-guidance"></div>
+      </div>
+      
+      <div class="controls">
+        <button id="prevStep" class="btn-secondary">← Previous</button>
+        <button id="speakStep" class="btn-voice">🎤 Guide Me</button>
+        <button id="nextStep" class="btn-primary">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

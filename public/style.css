@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 40px;
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+#ingredients {
+  flex: 1;
+  padding: 15px 20px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.1em;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+#findRecipes {
+  background: #ff6b6b;
+  color: white;
+}
+
+.loading {
+  text-align: center;
+  color: white;
+  padding: 40px;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.hidden {
+  display: none;
+}
+
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.recipe-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+.recipe-header {
+  margin-bottom: 15px;
+}
+
+.recipe-name {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.recipe-meta {
+  display: flex;
+  gap: 15px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.badge {
+  background: #f0f0f0;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.badge.lazy { background: #ffeaa7; }
+.badge.quick { background: #74b9ff; }
+.badge.onepan { background: #a29bfe; }
+
+.recipe-steps {
+  margin: 15px 0;
+}
+
+.recipe-steps h4 {
+  color: #555;
+  margin-bottom: 8px;
+  font-size: 0.95em;
+}
+
+.recipe-steps ol {
+  padding-left: 20px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.recipe-steps li {
+  margin-bottom: 5px;
+}
+
+.start-cooking {
+  width: 100%;
+  background: #00b894;
+  color: white;
+  margin-top: 15px;
+}
+
+.cooking-mode {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cooking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.cooking-header h2 {
+  color: #333;
+  font-size: 1.8em;
+}
+
+.close-btn {
+  background: #ff6b6b;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2em;
+  padding: 0;
+}
+
+.step-container {
+  margin-bottom: 30px;
+}
+
+.step-number {
+  color: #667eea;
+  font-weight: 700;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.step-text {
+  font-size: 1.3em;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.voice-guidance {
+  background: #e3f2fd;
+  padding: 20px;
+  border-radius: 10px;
+  color: #1976d2;
+  font-style: italic;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+  flex: 1;
+}
+
+.btn-secondary {
+  background: #e0e0e0;
+  color: #333;
+  flex: 1;
+}
+
+.btn-voice {
+  background: #00b894;
+  color: white;
+  flex: 1.5;
+}
+
+.btn-primary:disabled,
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 2em; }
+  .input-section { flex-direction: column; }
+  .recipes { grid-template-columns: 1fr; }
+  .controls { flex-direction: column; }
+}
